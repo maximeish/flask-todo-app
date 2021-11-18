@@ -193,22 +193,22 @@ logout_view = LogoutAPI.as_view('logout_api')
 
 # add Rules for API Endpoints
 auth_blueprint.add_url_rule(
-    '/signup',
+    '/api/signup',
     view_func=registration_view,
     methods=['POST']
 )
 auth_blueprint.add_url_rule(
-    '/login',
+    '/api/login',
     view_func=login_view,
     methods=['POST']
 )
 auth_blueprint.add_url_rule(
-    '/status',
+    '/api/status',
     view_func=user_view,
     methods=['GET']
 )
 auth_blueprint.add_url_rule(
-    '/logout',
+    '/api/logout',
     view_func=logout_view,
     methods=['POST']
 )
@@ -226,7 +226,7 @@ bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 
 
-@app.route('/')
+@app.route('/api')
 def index():
     return make_response(
         jsonify({"message": "Welcome to 2Do"}),
