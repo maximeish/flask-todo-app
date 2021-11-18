@@ -8,6 +8,7 @@ import {
   theme,
 } from "@chakra-ui/react";
 import ToDo from "./Todo";
+import Authentication from "./auth";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -17,7 +18,8 @@ export const App = () => (
           <Text fontSize="xl" fontWeight="bold">
             Todo App
           </Text>
-          <ToDo />
+          <Authentication />
+          {/* <ToDo /> */}
         </VStack>
       </Grid>
     </Box>

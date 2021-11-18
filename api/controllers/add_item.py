@@ -1,9 +1,9 @@
 from flask import Flask, jsonify, make_response
 
 
-def add_item(name):
+def add_item(item):
     response = make_response(
-        jsonify({"message": "I will add an item", "name": name}),
+        jsonify({"items": ["item1", "item2", "item3", item]}),
         200,
     )
     response.headers["Content-Type"] = "application/json"

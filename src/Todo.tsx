@@ -13,10 +13,8 @@ const ToDo = () => {
     fetch("/fetch")
       .then((res) => res.json())
       .then((data) => {
-        setTimeout(() => {
-          setItems(data.items);
-          setFetching(false);
-        }, 3000);
+        setItems(data.items);
+        setFetching(false);
       });
   }, []);
 
