@@ -23,6 +23,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "migrate": "cd api && source venv/bin/activate && python manage.py create_db && python manage.py db init && python manage.py db migrate",
+    "migrate:reset": "cd api && source venv/bin/activate && python manage.py drop_db && rm -rf ./migrations/* && rmdir ./migrations",
     "start-api": "cd api && source venv/bin/activate && venv/bin/flask run",
     "build": "react-scripts build",
     "test": "react-scripts test",

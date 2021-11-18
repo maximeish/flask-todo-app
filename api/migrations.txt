@@ -1,0 +1,8 @@
+init
+
+python manage.py create_db
+python manage.py db init
+python manage.py db migrate
+
+reset
+python manage.py drop_db
