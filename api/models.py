@@ -190,6 +190,7 @@ login_view = LoginAPI.as_view('login_api')
 user_view = UserAPI.as_view('user_api')
 logout_view = LogoutAPI.as_view('logout_api')
 
+
 # add Rules for API Endpoints
 auth_blueprint.add_url_rule(
     '/signup',
@@ -223,6 +224,14 @@ app.config.from_object(app_settings)
 
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
+
+
+@app.route('/')
+def index():
+    return make_response(
+        jsonify({"message": "Welcome to 2Do"}),
+        200,
+    )
 
 
 app.register_blueprint(auth_blueprint)
@@ -321,3 +330,7 @@ class BlacklistToken(db.Model):
             return True
         else:
             return False
+
+
+if __name__ == '__main__':
+    app.run()
