@@ -664,6 +664,3 @@ def not_found(error):
 
 
 app.register_blueprint(auth_blueprint)
-
-if __name__ == '__main__':
-    app.run()
