@@ -16,13 +16,11 @@ class DevelopmentConfig(BaseConfig):
     """Development configuration."""
     DEBUG = True
     BCRYPT_LOG_ROUNDS = 4
-    SQLALCHEMY_DATABASE_URI = os.environ.get(
-        'DATABASE_URL', postgres_local_base + database_name)
+    SQLALCHEMY_DATABASE_URI = 'postgres://fxblfrbesmdfxe:fa9501da8798a8f11347184efa2947d7bf1e9ae262c0358fbc001c106d0bca47@ec2-34-197-249-102.compute-1.amazonaws.com:5432/db35gkiqac5mth'
 
 
 class ProductionConfig(BaseConfig):
     """Production configuration."""
     SECRET_KEY = 'my_precious'
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get(
-        'DATABASE_URL', postgres_local_base + database_name)
+    SQLALCHEMY_DATABASE_URI = 'postgres://fxblfrbesmdfxe:fa9501da8798a8f11347184efa2947d7bf1e9ae262c0358fbc001c106d0bca47@ec2-34-197-249-102.compute-1.amazonaws.com:5432/db35gkiqac5mth'
