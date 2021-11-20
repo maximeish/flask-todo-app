@@ -13,6 +13,7 @@ from flask_cors import CORS
 from flask import Blueprint, request, make_response, jsonify
 from flask.views import MethodView
 from flask_marshmallow import Marshmallow
+from flask_heroku import Heroku
 
 auth_blueprint = Blueprint('auth', __name__)
 
@@ -24,9 +25,10 @@ app_settings = os.getenv(
     'config.DevelopmentConfig'
 )
 app.config.from_object(app_settings)
-ma = Marshmallow(app)
 
+ma = Marshmallow(app)
 bcrypt = Bcrypt(app)
+heroku = Heroku(app)
 db = SQLAlchemy(app)
 
 

@@ -1,7 +1,7 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 postgres_local_base = 'postgresql://postgres:@localhost/'
-database_name = 'flask_todo_app'
+database_name = 'flask-todooh-app-db'
 
 
 class BaseConfig:
