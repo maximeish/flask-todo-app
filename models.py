@@ -137,6 +137,21 @@ class BlacklistToken(db.Model):
             return False
 
 
+class WelcomeAPI(MethodView):
+    """
+    WelcomeAPI class for handling default welcome route
+    """
+
+    def get(self):
+        try:
+            responseObject = {
+                'message': 'Welcome to 2Do'
+            }
+            return make_response(jsonify(responseObject)), 200
+        except Exception as e:
+            print(e)
+
+
 class SignupAPI(MethodView):
     """
     User Registration Resource
@@ -594,6 +609,7 @@ registration_view = SignupAPI.as_view('register_api')
 login_view = LoginAPI.as_view('login_api')
 user_view = UserAPI.as_view('user_api')
 logout_view = LogoutAPI.as_view('logout_api')
+welcome = WelcomeAPI.as_view('welcome_api')
 
 # task operations resources
 add_task = AddTaskAPI.as_view('add_task_api')
@@ -621,6 +637,16 @@ auth_blueprint.add_url_rule(
     '/api/logout',
     view_func=logout_view,
     methods=['POST']
+)
+auth_blueprint.add_url_rule(
+    '/api',
+    view_func=welcome,
+    methods=['GET']
+)
+auth_blueprint.add_url_rule(
+    '/',
+    view_func=welcome,
+    methods=['GET']
 )
 
 # task operations
