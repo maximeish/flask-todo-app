@@ -164,6 +164,7 @@ class SignupAPI(MethodView):
         try:
             user = User.query.filter_by(email=post_data.get('email')).first()
         except Exception as e:
+            print(e)
             responseObject = {
                 'status': 'fail',
                 'message': 'Provide email and password'

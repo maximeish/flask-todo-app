@@ -1,7 +1,7 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
-postgres_local_base = 'postgresql://postgres:@localhost/'
-database_name = 'flask-todooh-app'
+postgres_local_base = 'postgresql://postgres:postgres@localhost:5432/'
+database_name = 'flask_todo_app'
 
 
 class BaseConfig:
@@ -23,5 +23,6 @@ class DevelopmentConfig(BaseConfig):
 class ProductionConfig(BaseConfig):
     """Production configuration."""
     SECRET_KEY = 'my_precious'
-    DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'postgresql:///example'
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get(
+        'DATABASE_URL', postgres_local_base + database_name)
