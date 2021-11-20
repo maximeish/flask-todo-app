@@ -7,6 +7,7 @@ cryptography==35.0.0
 Flask==1.1.4
 Flask-Bcrypt==0.7.1
 Flask-Cors==3.0.10
+flask-marshmallow==0.14.0
 Flask-Migrate==2.1.1
 Flask-Script==2.0.6
 Flask-SQLAlchemy==2.5.1
@@ -16,6 +17,8 @@ itsdangerous==1.1.0
 Jinja2==2.11.3
 Mako==1.1.6
 MarkupSafe==2.0.1
+marshmallow==3.14.1
+marshmallow-sqlalchemy==0.26.1
 psycopg2==2.9.2
 pycparser==2.21
 PyJWT==2.3.0
