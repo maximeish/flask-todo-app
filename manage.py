@@ -1,6 +1,7 @@
 from models import app, db
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
+import os
 
 
 migrate = Migrate(app, db)
@@ -14,6 +15,8 @@ manager.add_command('db', MigrateCommand)
 def create_db():
     """Creates the db tables."""
     db.create_all()
+    os.system('python manage.py db init')
+    os.system('python manage.py db migrate')
 
 
 @manager.command
