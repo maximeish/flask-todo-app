@@ -1,6 +1,6 @@
 # 2Do REST API
 
-An API for a **to-do list application** in Postman. It provides endpoints for user authentication (login/signup), retrieveing user tasks, adding a new task, editing the task as well as
+An API for a **to-do list application**. It provides endpoints for user authentication (login/signup), retrieveing user tasks, adding a new task, editing the task as well as
 deleting a task.
 
 > The API is built using Flask micro web framework, with a Postgresql database and hosted on Heroku deployment platform.
