@@ -2,6 +2,11 @@
   "name": "flask-todo-app",
   "version": "0.1.0",
   "private": "false",
+  "author": {
+    "name": "Maxime Ishimwe",
+    "email": "mxmishimwe5@gmail.com",
+    "url": "https://maximeishimwe.netlify.app"
+  },
   "dependencies": {
     "@chakra-ui/react": "^1.7.1",
     "@emotion/react": "^11.0.0",
